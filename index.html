@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Vue Slider</title>
+</head>
+<body>
+    <div id="root" class="container">
+        <div class="slider">
+            <div class="prev" @click="prevPhoto">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <div class="images">
+                <img :src="'img/' + photos[counter]" alt="">
+            </div>
+            <div class="next" @click="nextPhoto">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </div>
+        <div class="nav">
+            <i class="fas fa-circle" :class="(counter == index) ? 'active' : null" v-for="(photo, index) in photos"></i>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
