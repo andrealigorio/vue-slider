@@ -27,6 +27,10 @@
         <div class="nav">
             <i class="fas fa-circle" :class="(counter == index) ? 'active' : null" v-for="(photo, index) in photos"></i>
         </div>
+        <div class="player">
+            <i @click="photoPlay" :class="fas fa-play-circle" v-if="playView == true"></i>
+            <i @click="photoPause" class="fas fa-pause-circle" v-else="playView == false"></i>
+        </div>
     </div>
     <script src="js/main.js"></script>
 </body>

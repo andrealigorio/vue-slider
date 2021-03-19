@@ -2,6 +2,8 @@ var root = new Vue({
     el: "#root",
     data: {
         counter: 0,
+        play: true,
+        playView: true,
         photos: [
             "room1.jpg",
             "room2.jpg",
@@ -23,6 +25,23 @@ var root = new Vue({
             if (this.counter == this.photos.length) {
                 this.counter = 0;
             }
+        },
+        autoPlay() {
+            var playerStart = setInterval(() => {
+                this.nextPhoto();
+                if(!this.play) {
+                    clearInterval(playerStart);
+                }
+            }, 3000);
+        },
+        photoPlay() {
+            this.playView = false;
+            this.play = true;
+            this.autoPlay();        
+        },
+        photoPause() {
+            this.playView = true;
+            this.play = false;
         }
     }
 });

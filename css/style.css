@@ -27,11 +27,11 @@
     font-size: 50px;
     padding: 0 30px;
 }
-.prev i.fas, .next i.fas, .nav i.fa-circle {
+.prev i.fas, .next i.fas, .nav i.fa-circle, .player > i {
     cursor: pointer;
     color: grey;
 }
-.prev i.fas:hover, .next i.fas:hover, .nav i.fa-circle:hover {
+.prev i.fas:hover, .next i.fas:hover, .nav i.fa-circle:hover, .player > i:hover {
     color: black;
 }
 .nav {
@@ -43,4 +43,10 @@
 }
 .nav i.fa-circle.active {
     color: black;
+}
+.player {
+    text-align: center;
+}
+.player > i {
+    font-size: 50px;
 }
