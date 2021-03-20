@@ -18,18 +18,18 @@
                 <i class="fas fa-angle-left"></i>
             </div>
             <div class="images">
-                <img :src="'img/' + photos[counter]" alt="">
+                <img :src="'img/' + photos[counter]" :alt="'room' + (counter+1)">
             </div>
             <div class="next" @click="nextPhoto">
                 <i class="fas fa-angle-right"></i>
             </div>
         </div>
         <div class="nav">
-            <i class="fas fa-circle" :class="(counter == index) ? 'active' : null" v-for="(photo, index) in photos"></i>
+            <i @click="circlePhoto(index)" class="fas fa-circle" :class="(counter == index) ? 'active' : null" v-for="(photo, index) in photos"></i>
         </div>
         <div class="player">
-            <i @click="photoPlay" :class="fas fa-play-circle" v-if="playView == true"></i>
-            <i @click="photoPause" class="fas fa-pause-circle" v-else="playView == false"></i>
+            <i @click="sliderPlay" class="fas fa-play-circle" v-if="playView == true"></i>
+            <i @click="sliderPause" class="fas fa-pause-circle" v-else="playView == false"></i>
         </div>
     </div>
     <script src="js/main.js"></script>

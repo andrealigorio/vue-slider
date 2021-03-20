@@ -34,14 +34,17 @@ var root = new Vue({
                 }
             }, 3000);
         },
-        photoPlay() {
+        sliderPlay() {
             this.playView = false;
             this.play = true;
             this.autoPlay();        
         },
-        photoPause() {
+        sliderPause() {
             this.playView = true;
             this.play = false;
+        },
+        circlePhoto(index) {
+            this.counter = index;
         }
     }
 });
