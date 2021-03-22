@@ -28,8 +28,8 @@
             <i @click="circlePhoto(index)" class="fas fa-circle" :class="(counter == index) ? 'active' : null" v-for="(photo, index) in photos"></i>
         </div>
         <div class="player">
-            <i @click="sliderPlay" class="fas fa-play-circle" v-if="playView == true"></i>
-            <i @click="sliderPause" class="fas fa-pause-circle" v-else="playView == false"></i>
+            <i @click="sliderPlay" class="fas fa-play-circle" v-if="playView"></i>
+            <i @click="sliderPause" class="fas fa-pause-circle" v-else="!playView"></i>
         </div>
     </div>
     <script src="js/main.js"></script>

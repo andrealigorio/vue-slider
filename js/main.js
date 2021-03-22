@@ -13,6 +13,21 @@ var root = new Vue({
             "room6.jpg"
         ]
     },
+    created: function() {
+        document.addEventListener("keyup", (event) => {
+            if(event.which == 39) {
+                this.nextPhoto();
+            } else if (event.which == 37) {
+                this.prevPhoto();
+            } else if (event.which == 13) {
+                if (this.playView) {
+                    this.sliderPlay();
+                } else {
+                    this.sliderPause();
+                }
+            }
+        });
+    },
     methods: {
         prevPhoto() {
             this.counter--;
